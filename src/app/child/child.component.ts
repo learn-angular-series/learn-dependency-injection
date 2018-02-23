@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Self, Optional } from '@angular/core';
 import { UserListService } from '../user-list/service/user-list.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { UserListService } from '../user-list/service/user-list.service';
 export class ChildComponent implements OnInit {
 
   constructor(
-    public userListService:UserListService
+    @Self() @Optional() public userListService:UserListService
   ) { }
 
   ngOnInit() {
