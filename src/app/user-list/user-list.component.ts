@@ -10,8 +10,10 @@ export class UserListComponent implements OnInit {
   public userList:Array<any>;
 
   constructor(
-    private userListService:UserListService
-  ) { }
+    public userListService:UserListService
+  ) { 
+    console.log(this.userListService);
+  }
 
   ngOnInit() {
     this.userList=this.userListService.getUserList();
