@@ -5,7 +5,7 @@ import { UserListService } from './service/user-list.service';
   selector: 'user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss'],
-  //如果你在这里配置了UserListService，会优先使用这里的配置，这样就不是单例了
+  //如果你在这里配置了UserListService，会优先使用这里的配置
   providers: [UserListService] 
 })
 export class UserListComponent implements OnInit {
