@@ -5,18 +5,19 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { ChildComponent } from './child/child.component';
+import { UserListService } from './user-list/service/user-list.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent,
-    ChildComponent
+    ChildComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UserListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
