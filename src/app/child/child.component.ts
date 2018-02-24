@@ -1,4 +1,4 @@
-import { Component, OnInit, Host } from '@angular/core';
+import { Component, OnInit, Host, Optional } from '@angular/core';
 import { UserListService } from '../user-list/service/user-list.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { UserListService } from '../user-list/service/user-list.service';
 export class ChildComponent implements OnInit {
 
   constructor(
-    @Host() public userListService: UserListService
+    @Host() @Optional() public userListService: UserListService
   ) { }
 
   ngOnInit() {
