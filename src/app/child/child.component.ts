@@ -1,18 +1,18 @@
-import { Component, OnInit, SkipSelf, Optional } from '@angular/core';
+import { Component, OnInit, Host } from '@angular/core';
 import { UserListService } from '../user-list/service/user-list.service';
 
 @Component({
   selector: 'child',
   templateUrl: './child.component.html',
-  styleUrls: ['./child.component.scss'],
-  providers: [UserListService]
+  styleUrls: ['./child.component.scss']
 })
 export class ChildComponent implements OnInit {
 
   constructor(
-    @SkipSelf() @Optional() public userListService: UserListService
+    @Host() public userListService: UserListService
   ) { }
 
   ngOnInit() {
+    
   }
 }
