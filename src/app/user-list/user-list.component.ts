@@ -1,23 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
 import { UserListService } from './service/user-list.service';
 
 @Component({
   selector: 'user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss'],
-  //如果你在这里配置了UserListService，会优先使用这里的配置
-  providers: [UserListService] 
+  styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
   public userList:Array<any>;
+  //这里我们没有在构造函数里面定义userListService，Angular不会自动注射
+  public userListService:UserListService;
 
-  constructor(
-    public userListService:UserListService
+  constructor(  
+    public injector:Injector
   ) { 
     console.log(this.userListService);
+    console.log(this.injector);
   }
 
   ngOnInit() {
-    this.userList=this.userListService.getUserList();
+    //尝试自己手动创建userListService实例
+    this.userListService=this.injector.get(UserListService);
+    console.log(this.userListService);
+
+    this.userListService.getUserList().subscribe((userList:Array<any>)=>{
+      this.userList=userList;
+    });
   }
 }
