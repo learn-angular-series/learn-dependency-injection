@@ -1,23 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { UUID } from 'angular2-uuid';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Injectable()
 export class UserListService {
   private _id:string;
 
-  constructor() { 
+  constructor(
+    @Inject(HttpClient) private hc
+  ) { 
     this._id=UUID.UUID();
   }
 
   public getUserList():Observable<Array<any>>{
-    return Observable.of([
-      {userName:'damoqiongqiu',age:18},
-      {userName:'damoqiongqiu',age:18},
-      {userName:'damoqiongqiu',age:18},
-      {userName:'damoqiongqiu',age:18},
-      {userName:'damoqiongqiu',age:18}
-    ]);
+    return Observable.empty();
   }
 
   public get id():string{

@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { UserListService } from './service/user-list.service';
+import { LiteralService } from './service/literal.service';
 
 @Component({
   selector: 'user-list',
@@ -12,7 +13,8 @@ export class UserListComponent implements OnInit {
   public userListService:UserListService;
 
   constructor(  
-    public injector:Injector
+    public injector:Injector,
+    public literalService:LiteralService
   ) { 
     console.log(this.userListService);
     console.log(this.injector);
