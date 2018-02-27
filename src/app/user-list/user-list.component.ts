@@ -37,6 +37,8 @@ export class UserListComponent implements OnInit {
       { provide: "TestService", useClass: TestService }  
     ]);
 
+    console.log(myInjector);
+
     this.testService = myInjector.get("TestService");
 
     console.log(this.testService);
