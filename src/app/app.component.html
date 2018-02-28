@@ -1,3 +1,38 @@
-<div class="container app-container">
-    <user-list></user-list>
+<!-- 顶部导航 -->
+<div class="navbar navbar-fixed-top main-nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button #button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse" (click)="toggle(button)">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-responsive-collapse" aria-expanded="false">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active" class="dropdown">
+                    <a routerLink="home">主页</a>
+                </li>
+                <li routerLinkActive="active" class="dropdown">
+                    <a routerLink="userlist">用户列表</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 主体内容区域 -->
+<div class="container main-container">
+    <router-outlet></router-outlet>
+</div>
+<!-- 底部区域 -->
+<div class="footer bs-footer">
+    <div class="container">
+        <div class="row">
+            <p>
+                Angular中文开发者社区
+                <a href="http://www.ngfans.net/" target="_blank">NgFans</a>
+            </p>
+        </div>
+    </div>
 </div>

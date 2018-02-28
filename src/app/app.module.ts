@@ -1,23 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { ChildComponent } from './child/child.component';
-import { UserListService } from './user-list/service/user-list.service';
+import { HomeComponent } from './home/home.component';
+
+import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent,
-    UserListComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    RouterModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [UserListService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
