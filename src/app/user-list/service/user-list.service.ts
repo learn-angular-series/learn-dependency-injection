@@ -4,23 +4,23 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class UserListService {
-  private _id:string;
+  private _id: string;
 
-  constructor() { 
-    this._id=UUID.UUID();
+  constructor() {
+    this._id = UUID.UUID();
   }
 
-  public getUserList():Observable<Array<any>>{
-    return Observable.of([
-      {userName:'damoqiongqiu',age:18},
-      {userName:'damoqiongqiu',age:18},
-      {userName:'damoqiongqiu',age:18},
-      {userName:'damoqiongqiu',age:18},
-      {userName:'damoqiongqiu',age:18}
+  public getUserList(): Observable<Array<any>> {
+    return Observable.create([
+      {userName: 'damoqiongqiu', age: 18},
+      {userName: 'damoqiongqiu', age: 18},
+      {userName: 'damoqiongqiu', age: 18},
+      {userName: 'damoqiongqiu', age: 18},
+      {userName: 'damoqiongqiu', age: 18}
     ]);
   }
 
-  public get id():string{
+  public get id(): string {
     return this._id;
   }
 }
