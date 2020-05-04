@@ -3,30 +3,31 @@ import { UserListService } from './service/user-list.service';
 import { LiteralService } from './service/literal.service';
 
 @Component({
+  // tslint:disable-next-line: component-selector
   selector: 'user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-  public userList:Array<any>;
-  //这里我们没有在构造函数里面定义userListService，Angular不会自动注射
-  public userListService:UserListService;
+  public userList: Array<any>;
+  // 这里我们没有在构造函数里面定义userListService，Angular不会自动注射
+  public userListService: UserListService;
 
-  constructor(  
-    public injector:Injector,
-    public literalService:LiteralService
-  ) { 
+  constructor(
+    public injector: Injector,
+    public literalService: LiteralService
+  ) {
     console.log(this.userListService);
     console.log(this.injector);
   }
 
   ngOnInit() {
-    //尝试自己手动创建userListService实例
-    this.userListService=this.injector.get(UserListService);
+    // 尝试自己手动创建userListService实例
+    this.userListService = this.injector.get(UserListService);
     console.log(this.userListService);
 
-    this.userListService.getUserList().subscribe((userList:Array<any>)=>{
-      this.userList=userList;
+    this.userListService.getUserList().subscribe((userList: Array<any>) => {
+      this.userList = userList;
     });
   }
 }

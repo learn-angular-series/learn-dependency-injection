@@ -21,7 +21,7 @@ import { MY_CONFIG, MY_CONFIG_TOKEN} from './my-config';
     CommonModule,
     HttpClientModule
   ],
-  providers: [UserListService,LiteralService,{ provide: MY_CONFIG_TOKEN, useValue: MY_CONFIG }],
+  providers: [UserListService, LiteralService, { provide: MY_CONFIG_TOKEN, useValue: MY_CONFIG }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
